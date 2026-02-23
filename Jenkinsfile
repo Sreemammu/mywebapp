@@ -6,6 +6,7 @@ pipeline {
     }
 
     stages {
+
         stage('Build') {
             steps {
                 sh 'mvn clean package'
@@ -17,5 +18,18 @@ pipeline {
                 sh 'mvn deploy'
             }
         }
+
+        stage('Deploy to Tomcat') {
+            steps {
+                deploy adapters: [tomcat9(
+                        credentialsId: 'tomcat-creds',
+                        path: '',
+                        url: 'http://15.206.174.223:8080'
+                )],
+                contextPath: 'myapp',
+                war: '**/*.war'
+            }
+        }
+
     }
 }
