@@ -68,7 +68,7 @@
         <repository>
             <id>nexus</id>
             <name>Nexus Releases</name>
-            <url>http://43.204.235.202:8081/repository/maven-releases/</url>
+            <url>http://172.31.25.108:8081/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 
