@@ -12,17 +12,14 @@
 
     <name>mywebapp</name>
 
-    <!-- Java Version -->
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <!-- Dependencies -->
     <dependencies>
 
-        <!-- Servlet API for Tomcat -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -30,7 +27,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- JUnit for testing -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -40,36 +36,36 @@
 
     </dependencies>
 
-    <!-- Build Plugins -->
     <build>
         <finalName>mywebapp</finalName>
 
         <plugins>
-
-            <!-- Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
             </plugin>
 
-            <!-- WAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.4.0</version>
             </plugin>
-
         </plugins>
     </build>
 
-    <!-- Nexus Repository Configuration -->
     <distributionManagement>
         <repository>
             <id>nexus</id>
             <name>Nexus Releases</name>
-            <url>http://172.31.25.108:8081/repository/maven-releases/</url>
+            <url>http://65.2.82.31:8081/repository/maven-releases/</url>
         </repository>
+
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>Nexus Snapshots</name>
+            <url>http://65.2.82.31:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
     </distributionManagement>
 
 </project>
